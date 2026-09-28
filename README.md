@@ -1,194 +1,53 @@
-# TaskIyagi (작업이야기)
+# TaskIyagi
 
-리눅스 데스크톱을 위한 **Qt6 패널·작업표시줄**입니다.
+**One taskbar for every Linux desktop — GNOME, KDE Plasma, XFCE, Cinnamon, MATE, LXQt, sway, Hyprland. Start menu, tray, calendar and sticky notes in one panel.**
 
-앱 런처, 작업표시줄, 시스템 트레이, 달력·메모·포스트잇, 계산기, 빠른 설정을 패널 하나에 모았습니다.
-**GNOME 뿐 아니라 KDE Plasma, labwc·sway 같은 wlroots 계열, XFCE·MATE·Cinnamon·LXQt 에서도** 동작합니다.
+[English](README.md) · [한국어](README_ko.md)
 
-> PanelIyagi(패널이야기)의 기능을 모두 담고, 창을 다루는 부분을 데스크톱마다 따로 맞췄습니다.
-> 무엇이 다른지는 아래 [PanelIyagi 와 다른 점](#-paneliyagi-와-다른-점)에 정리했습니다.
+## Why TaskIyagi?
 
-[English](README_en.md)
+- **Same panel, whatever desktop you use.** Switch from GNOME to KDE or try Hyprland — your taskbar, pinned apps and notes stay the same. TaskIyagi detects the desktop and adapts; nothing to configure.
+- **A familiar start menu and taskbar.** Apps by category with live search, every open window on the bar, one click to minimize or raise.
+- **Your day in the clock.** Calendar with notes and reminders, sticky notes, monthly and quick to-dos.
+- **Quick settings built in.** Volume, Wi-Fi, Bluetooth, battery, night light, CPU and memory — without opening Settings.
+- **Multi-monitor done right.** Pick the monitor for the panel; it follows screens being plugged in, rearranged or rescaled.
+- **Make it yours.** Skins, colors, icon size, top or bottom, auto-hide.
 
----
+## Features
 
-## ✨ 주요 기능
+### Launcher and taskbar
+- Apps by category, favorites, live search, add your own programs
+- Open windows with active-window marker, grouping, pinned apps, kill process
 
-### 앱 런처
-* **카테고리별 앱 표시** — 인터넷 · 미디어 · 개발 · 게임 등
-* **즐겨찾기** — 자주 여는 앱이 위로 올라옵니다
-* **실시간 검색** — 앱 이름과 설명을 함께 찾습니다
-* **프로그램 등록** — 카테고리 우클릭으로 실행 항목을 직접 만듭니다
+### System tray
+- StatusNotifierItem and XEMBED trays — modern and older apps both show up
 
-### 작업표시줄
-* **열린 창 목록** — 데스크톱에 맞는 방식으로 창을 실시간으로 받습니다 ([지원 데스크톱](#-지원-데스크톱))
-* **활성 창 표시** — 지금 쓰는 창에 밑줄이 들어옵니다
-* **클릭 한 번으로 최소화 ↔ 앞으로** — 앞에 있는 창을 누르면 최소화, 아니면 앞으로
-* **앱 고정** — 창 버튼 우클릭 → 작업표시줄에 고정
-* **고정 앱 클릭 = 새 창** — 이미 떠 있는 터미널 같은 앱도 새 창을 엽니다. 창이 여럿이면 올려 두어 목록에서 고릅니다
-* **창 묶기** — 같은 프로그램의 창을 버튼 하나로 묶습니다
-* **프로세스 죽이기** — 응답 없는 프로그램을 우클릭으로 끝냅니다
-* **한글 제목** — 긴 한글 창 제목도 버튼 밖으로 넘치지 않게 잘라 보여 줍니다
+### Clock, calendar, notes
+- Calendar, notes, sticky notes, reminders, monthly tasks, quick tasks
 
-### 시스템 트레이
-* **새 방식 트레이(StatusNotifierItem)** — KDE 앱 · Electron 앱(Discord, Slack 등) · 앱 인디케이터 ·
-  Qt 앱의 트레이 아이콘. 메뉴(하위 메뉴·체크 항목)도 그대로 열립니다
-* **옛 방식 트레이(XEMBED)** — Telegram · Wine 프로그램 · ClipIyagi 등
+### Quick settings
+- Volume · Wi-Fi · Bluetooth · battery · night light
+- CPU and memory usage, system monitor, network watch
 
-### 시계 + 달력/메모
-* **달력** — 날짜별 메모, 기록 있는 날 표시
-* **메모** — 카테고리 + 페이지, 전체 검색
-* **포스트잇** — 바탕화면에 붙는 메모 창 (다시 켜도 그 자리에)
-* **시간 알림** — 날짜별 특정 시각에 알림
-* **이달 할일** — 매월 반복되는 일을 체크, 다음 달 1일에 체크가 풀림, 카테고리로 묶기
-* **잠깐 할일** — 메일·메신저로 들어온 요청을 적어 두면 기한이 지나 자동으로 지워짐
+### Also
+- Calculator (inline popup or window)
+- Korean/English input indicator, power menu, settings shortcuts
+- Global shortcuts (`Shift+Esc` system monitor, `Shift+F1`–`F5` your programs)
 
-### 계산기
-* 패널 팝업에서 바로 계산, 독립 창, 계산 기록, 항상 위
+## Supported desktops
 
-### 빠른 설정
-* 볼륨 · Wi-Fi · 블루투스 · 배터리 · 야간 모드(GNOME·KDE)
-* CPU · 메모리 사용량, 시스템 감시, 네트워크 감시
+| Desktop | Window list | Tray | Setup |
+|---|---|---|---|
+| GNOME (Ubuntu · Fedora default) | ✅ | ✅ | Log out and back in once |
+| KDE Plasma | ✅ | ✅ | none |
+| labwc · Wayfire · niri · Hyprland | ✅ | ✅ | none |
+| sway | ✅ | ✅ | none |
+| XFCE · MATE · Cinnamon · LXQt | ✅ | ✅ | none |
 
-### 다중 모니터
-* 패널을 띄울 모니터 선택 (패널 우클릭 → 설정)
-* 모니터 연결·해제, 배치·배율 변경을 따라갑니다
-* 전체화면 판정은 패널이 있는 모니터 기준
+On GNOME Wayland, TaskIyagi installs a small helper extension on first run so it can see the window list — that's why one re-login is needed.
 
-### 그 밖에
-* **한/영 입력 모드 표시** — 한글이야기·IBus 입력 모드를 패널에 표시
-* **전원 메뉴** — 절전 · 로그아웃 · 다시 시작 · 시스템 종료 (데스크톱의 확인 창을 씁니다)
-* **설정 바로가기** — Wi-Fi · 블루투스 · 디스플레이 · 소리 · 전원 · 마우스 · 프린터 (데스크톱의 설정 화면으로)
-* **전역 단축키** — Shift+Esc 시스템 감시, Shift+F1~F5 등록한 프로그램
-* **스킨 · 색상 · 아이콘 크기 · 패널 위치(위/아래) · 자동 숨기기**
-* **한국어 / 영어** — 시스템 언어에 따라 자동
+## Download
 
----
+Packages for Ubuntu (deb), Fedora (rpm), Arch (pkg.tar.zst) and other distributions (AppImage, zip) will appear on the **[Releases](https://github.com/iyagicom/TaskIyagi/releases)** page.
 
-## 🖥 지원 데스크톱
-
-실행하면 데스크톱을 스스로 알아보고 그에 맞는 방식을 고릅니다. 따로 설정할 것은 없습니다.
-
-| 데스크톱 | 창 목록 | 새 방식 트레이 | 전역 단축키 | 준비할 것 |
-|---|---|---|---|---|
-| **GNOME** (우분투·페도라 기본) | ✅ | ✅ | ✅ | 처음 한 번 **다시 로그인** (아래 참고) |
-| **KDE Plasma** | ✅ | ✅ | ✅ 시스템 설정 > 단축키에서 바꿀 수 있음 | 없음 |
-| **labwc · Wayfire · niri · Hyprland** | ✅ | ✅ | 컴포지터 설정에 직접 | 없음 |
-| **sway** (타일링) | ✅ 최소화·최대화는 sway 가 받지 않음 | ✅ | 컴포지터 설정에 직접 | 없음 |
-| **XFCE · MATE · Cinnamon · LXQt** (X11) | ✅ | ✅ | ✅ | 없음 |
-
-### GNOME 에서 처음 실행할 때
-
-GNOME 웨일랜드는 보안상 다른 프로그램의 창 목록을 일반 앱에 보여 주지 않습니다. 그래서 TaskIyagi 는
-처음 실행할 때 창 목록을 전해 주는 작은 GNOME 확장(**WindowIyagi**)을 스스로 설치합니다.
-GNOME 은 새 확장을 로그인할 때만 읽으므로 **처음 한 번만 로그아웃했다가 다시 로그인**하면 됩니다.
-
-* 확장은 창 목록과 창 제어만 전달합니다. 화면에 따로 그리는 것은 없습니다
-* 확장 관리자에서 **맨 위 "사용자 확장" 스위치를 끄면** WindowIyagi 확장도 같이 꺼져 창 버튼이 사라집니다.
-  이때 패널에 ⚠ 가 뜨고, 누르면 이유를 알려 줍니다. 다른 확장만 끄려면 그 확장 하나만 끄세요
-
----
-
-## 🔀 PanelIyagi 와 다른 점
-
-TaskIyagi 는 PanelIyagi 의 기능을 모두 가지고 있고, 두 프로그램을 **같이 설치해 같이 띄워도** 서로
-부딪치지 않습니다(설정·데이터·단축키가 따로입니다).
-
-| | PanelIyagi | TaskIyagi |
-|---|---|---|
-| **지원 데스크톱** | GNOME 전용 | GNOME · KDE Plasma · wlroots 계열 · XFCE/MATE/Cinnamon/LXQt |
-| **필요한 GNOME 확장** | PanelIyagi 확장을 직접 설치·활성화 | 첫 실행 때 WindowIyagi 확장을 스스로 설치 (다시 로그인 한 번). GNOME 이 아니면 확장 없음 |
-| **확장이 멈추거나 꺼졌을 때** | 창 버튼이 아무 표시 없이 사라짐 | ⚠ 표시 — 누르면 이유(꺼짐 · 오류 · 사용자 확장 스위치)를 알려 줌 |
-| **확장 업데이트** | 로그인 순간 겹치면 확장이 오류로 멈출 수 있었음 | 파일을 한 번에 바꿔 끼워 그런 일이 생기지 않음 |
-| **시스템 트레이** | 옛 방식(XEMBED)만 | 옛 방식 + **새 방식(StatusNotifierItem)** — KDE·Electron·앱 인디케이터 아이콘도 표시 |
-| **긴 한글 창 제목** | 글자 수로 잘라 버튼 밖으로 넘침 | 화면 폭으로 잘라 "…" 로 표시 |
-| **전원 · 설정 메뉴** | GNOME 명령만 | 데스크톱마다 그곳의 확인 창·설정 화면 |
-| **전역 단축키** | GNOME 사용자 단축키 | GNOME 사용자 단축키 · KDE 전역 단축키 · X11 키 잡기 |
-| **최대화한 창과 패널** | GNOME 에서 자리 예약 | wlroots 계열에서도 자리 예약 (최대화 창이 패널을 덮지 않음) |
-| **데이터 (메모·달력·포스트잇·알람)** | PanelIyagi 전용 | TaskIyagi 전용 — 패널 우클릭 **"PanelIyagi 에서 가져오기"** 로 한 번에 복사 |
-
-### PanelIyagi 에서 넘어오기
-
-1. TaskIyagi 를 설치하고 실행합니다
-2. 패널 빈 곳 우클릭 → **PanelIyagi 에서 가져오기…**
-3. 확인을 누르면 메모 · 달력 · 포스트잇 · 이달/잠깐 할일 · 알람 · 고정 앱 · 패널 설정을 복사하고 TaskIyagi 가 다시 시작합니다
-
-* PanelIyagi 쪽 데이터는 건드리지 않습니다. PanelIyagi 가 떠 있는 채로 가져와도 됩니다
-* TaskIyagi 에 원래 있던 것은 지우지 않고 `~/.config/IYAGI-INC/TaskIyagi-backup-날짜시각/` 으로 옮겨 둡니다
-* 패널을 띄울 모니터는 TaskIyagi 에서 고른 값을 그대로 둡니다
-* 두 패널을 같이 띄우면 Shift+F1~F5 는 먼저 등록한 PanelIyagi 가 씁니다. PanelIyagi 를 지우면 다음 실행부터 TaskIyagi 가 씁니다
-
----
-
-## 🎮 조작
-
-| 동작 | 방법 |
-|---|---|
-| 앱 런처 열기 | 왼쪽 앱표시 버튼 |
-| 창 앞으로 / 최소화 | 창 버튼 클릭 |
-| 앱 고정 · 창 묶기 · 단축키에 등록 | 창 버튼 우클릭 |
-| 새 창 열기 | 고정 앱 클릭 |
-| 트레이 아이콘 메뉴 | 트레이 아이콘 우클릭 (왼쪽 클릭은 앱이 정한 동작) |
-| 달력/메모 | 시계 클릭 |
-| 계산기 | 계산기 버튼 |
-| 빠른 설정 | 맨 오른쪽 버튼 |
-| 패널 설정 · 가져오기 · 종료 | 패널 빈 곳 우클릭 |
-| 시스템 감시 | Shift+Esc |
-| 등록한 프로그램 실행 | Shift+F1 ~ Shift+F5 |
-| 창 목록이 안 보일 때 | 패널의 ⚠ 클릭 → 이유 확인 |
-
----
-
-## 🚀 설치
-
-### 우분투 (deb)
-
-```bash
-sudo apt install ./taskiyagi_X.X.X~ubuntuXX.XX_amd64.deb
-```
-
-* 로그인하면 자동으로 시작합니다
-* Qt 등 필요한 라이브러리가 함께 들어 있어 따로 설치할 것이 없습니다
-* **GNOME** 이면 처음 실행한 뒤 한 번 다시 로그인하세요 ([이유](#gnome-에서-처음-실행할-때))
-
-자동 시작을 끄려면 데스크톱의 "시작 프로그램" 설정에서 TaskIyagi 를 끄면 됩니다.
-
-### 지우기
-
-```bash
-sudo apt remove taskiyagi
-```
-
-메모·달력 데이터는 지워지지 않고 아래 위치에 남습니다.
-
----
-
-## ⚙ 데이터 위치
-
-| 내용 | 경로 |
-|---|---|
-| 패널 설정 (위치·크기·고정 앱·단축키 칸) | `~/.config/IYAGI-INC/TaskIyagi.conf` |
-| 메모 · 달력 · 포스트잇 · 할일 | `~/.local/share/TaskIyagi/taskiyagi.db` |
-| 알람 | `~/.config/IYAGI-INC/TaskIyagi-Alarms.conf` |
-| 포스트잇 위치 | `~/.config/IYAGI-INC/stickynotes-taskiyagi.ini` |
-| 가져오기 전 백업 | `~/.config/IYAGI-INC/TaskIyagi-backup-날짜시각/` |
-
----
-
-## 👤 개발자
-
-IYAGI INC
-Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
-GitHub: https://github.com/iyagicom
-
----
-
-## 📜 라이선스
-
-Copyright (c) 2026 IYAGI INC. All rights reserved.
-
-이 소프트웨어는 실행 파일 형태로만 제공되며, 소스 코드는 공개되지 않습니다.
-
-개인, 상업, 교육, 정부, 단체 등 모든 목적으로 자유롭게 사용, 설치, 패키징 및 재배포할 수 있습니다.
-
-함께 들어 있는 오픈소스 구성요소(Qt 등)의 라이선스 고지는 `/usr/share/doc/taskiyagi/licenses/` 에 있습니다.
+Using GNOME only? **[PanelIyagi](https://github.com/iyagicom/PanelIyagi)** is available now.

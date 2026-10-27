@@ -48,6 +48,14 @@ GNOME Wayland 에서는 창 목록을 보려고 처음 실행할 때 작은 도�
 
 ## 다운로드
 
-우분투(deb)·페도라(rpm)·아치(pkg.tar.zst)·그 밖의 배포판(AppImage·zip)용 패키지가 **[Releases](https://github.com/iyagicom/TaskIyagi/releases)** 에 올라올 예정입니다.
+가장 새 판은 **[Releases](https://github.com/iyagicom/TaskIyagi/releases/latest)** 에서 받습니다. Qt 가 함께 들어 있어 따로 깔 것이 없습니다.
+
+| 내 시스템 | 받을 파일 |
+|---|---|
+| 우분투 24.04 | `taskiyagi_X.Y.Z.ubuntu24.04_amd64.deb` |
+| 우분투 26.04 / 데비안 | `taskiyagi_X.Y.Z.ubuntu26.04_amd64.deb` |
+| 페도라 | `taskiyagi-X.Y.Z-1.x86_64.rpm` |
+| 아치 | `taskiyagi-X.Y.Z-1-x86_64.pkg.tar.zst` |
+| 그 밖의 리눅스 | `taskiyagi-vX.Y.Z-x86_64.AppImage` 또는 `taskiyagi-vX.Y.Z-linux-x64.zip` |
 
 GNOME 만 쓴다면 **[패널이야기(PanelIyagi)](https://github.com/iyagicom/PanelIyagi)** 를 지금 받을 수 있습니다.

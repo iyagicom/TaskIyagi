@@ -48,6 +48,14 @@ On GNOME Wayland, TaskIyagi installs a small helper extension on first run so it
 
 ## Download
 
-Packages for Ubuntu (deb), Fedora (rpm), Arch (pkg.tar.zst) and other distributions (AppImage, zip) will appear on the **[Releases](https://github.com/iyagicom/TaskIyagi/releases)** page.
+Get the latest version from the **[Releases](https://github.com/iyagicom/TaskIyagi/releases/latest)** page. Qt is bundled — nothing else to install.
+
+| Your system | File to download |
+|---|---|
+| Ubuntu 24.04 | `taskiyagi_X.Y.Z.ubuntu24.04_amd64.deb` |
+| Ubuntu 26.04 / Debian | `taskiyagi_X.Y.Z.ubuntu26.04_amd64.deb` |
+| Fedora | `taskiyagi-X.Y.Z-1.x86_64.rpm` |
+| Arch Linux | `taskiyagi-X.Y.Z-1-x86_64.pkg.tar.zst` |
+| Other distributions | `taskiyagi-vX.Y.Z-x86_64.AppImage` or `taskiyagi-vX.Y.Z-linux-x64.zip` |
 
 Using GNOME only? **[PanelIyagi](https://github.com/iyagicom/PanelIyagi)** is available now.
